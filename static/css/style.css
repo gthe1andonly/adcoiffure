@@ -1,0 +1,247 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set base font and colors */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #0f7c5f;
+}
+
+/* Header styling */
+header {
+    background-color: rgba(62, 149, 130, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styling */
+nav {
+    text-align: center; /* Center align the navigation */
+}
+
+nav ul {
+    display: inline-block; /* Ensure the navigation links stay in a line */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the navigation links */
+    background-color: #333; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Hover background color */
+}
+
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Main styles */
+main {
+    padding: 20px;
+}
+
+.hero {
+    background-image: url('../static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1.1em;
+}
+
+/* Footer styling */
+footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure uniform height for images */
+.service img {
+    height: 400px; /* Adjust the height as needed */
+    width: 300px;
+    display: block; /* Ensure images are displayed as block elements */
+    margin: 0 auto; /* Center images horizontally */
+}
+
+/* Ensure uniform dimensions for images */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
+    gap: 20px; /* Adjust the gap between items */
+    justify-content: center;
+}
+
+.services img {
+    width: 100%; /* Ensure images fill the grid cells */
+    /* height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover container while maintaining aspect ratio */
+}
+
+/* Initially hide the service text */
+.service p {
+    display: none;
+}
+
+/* Show the service text when hovering over the service */
+.service:hover p {
+    display: block;
+}
+
+/* Service listing hover effect */
+.service:hover {
+    transform: scale(1.05); /* Scale up the service listing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #d5ec8b; /* Change background color on hover */
+}
+
+.gallerygrid {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+}
+
+.gallerygrid img {
+    width: 100%; /* Ensure images fill the grid cells */
+    /* height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover container while maintaining aspect ratio */
+}
+.galleryimg img {
+    width: 350px;
+    height: 400px;
+    margin: 10px;
+    border: 10px solid #fefae0;
+    /* -webkit-filter: sepia(100%);
+    filter: sepia(100%); */
+    transition-duration: 1s;
+}
+
+.galleryimg img:hover {
+    border: 5px solid #fff;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-filter: none;
+    filter: none;
+}
+
+/* Center the grid */
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for each slide */
+.slide {
+    display: none; /* Hide slides by default */
+}
+
+/* Style for active slide */
+.slide.active {
+    display: block; /* Show active slide */
+}
+
+#prevBtn,
+#nextBtn {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    align-self: center;
+}
+
+/* Previous and Next button hover effect */
+#prevBtn:hover,
+#nextBtn:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+
+/* Text styling */
+h1, h2, h3 {
+    color: #333; /* Dark text color */
+}
+
+.pageheader {
+    color: #333; /* Text color */
+    text-align: center; /* Center align the headers */
+    padding: 20px;
+}
+
+p {
+    color: #666; /* Lighter text color */
+}
