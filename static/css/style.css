@@ -2,10 +2,10 @@
 @import "https://unpkg.com/open-props/normalize.min.css";
 
 /* Reset default margin and padding */
-body, h1, h2, h3, p, ul, li {
+/* body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-}
+} */
 
 /* Set base font and colors */
 body {
@@ -20,6 +20,7 @@ header {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(73, 219, 187, 0.5);
     color: #fff;
+    
 }
 
 /* Navigation styling */
@@ -47,12 +48,6 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #555; /* Hover background color */
-}
-
-
-header h1 {
-    font-size: 2em;
-    color: #ffffff;
 }
 
 /* Main styles */
@@ -231,16 +226,18 @@ footer {
     background-color: #0056b3; /* Darker blue background on hover */
 }
 
+/* 
 
-/* Text styling */
 h1, h2, h3 {
-    color: #333; /* Dark text color */
+    color: #333; 
+} */
+h1 {
+    max-inline-size: 100% !important; /*Overriding the settings in normalize.min.css to widen the h1 header.*/
 }
-
 .pageheader {
-    color: #333; /* Text color */
-    text-align: center; /* Center align the headers */
-    padding: 20px;
+    text-align: center !important; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
 }
 
 p {
