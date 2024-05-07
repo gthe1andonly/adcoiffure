@@ -17,10 +17,9 @@ body {
 /* Header styling */
 header {
     background-color: rgba(73, 219, 188, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(73, 219, 187, 0.5);
+    padding: 2% 4%; /* Use percentages for padding */
+    box-shadow: 0 0.1em 0.2em rgba(73, 219, 187, 0.5); /* Use ems for box shadow */
     color: #fff;
-    
 }
 
 /* Navigation styling */
@@ -29,18 +28,20 @@ nav {
 }
 
 nav ul {
-    display: inline-block; /* Ensure the navigation links stay in a line */
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding for the navigation links */
+    padding: 8px 16px; /* Padding for the navigation links */
     background-color: #333; /* Background color */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
@@ -52,7 +53,7 @@ nav ul li a:hover {
 
 /* Main styles */
 main {
-    padding: 20px;
+    padding: 2%;
 }
 
 .hero {
@@ -60,21 +61,21 @@ main {
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 100px 0;
+    padding: 10% 0;
     text-align: center;
 }
 
 .hero h2 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
 }
 
 .hero p {
     font-size: 1.2em;
-    margin-bottom: 30px;
+    margin-bottom: 3%;
 }
 
-.btn {
+/* .btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #333;
@@ -86,11 +87,12 @@ main {
 
 .btn:hover {
     background-color: #555;
-}
+} */
 
 .features {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; /* Adjust alignment as needed */
+    align-items: stretch; /* Vertically center items */
     margin-top: 50px;
 }
 
@@ -100,6 +102,10 @@ main {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature h3 {
@@ -107,18 +113,27 @@ main {
     margin-bottom: 10px;
 }
 
-.feature p {
-    font-size: 1.1em;
+
+.table {
+    background-color: white;
+    border-color: white;
+    color: black;
+    width: 100%; /* Make table fill the width of its container */
+    border-collapse: collapse; /* Collapse table borders */
 }
+.table th, td {
+    background-color: white;
+    color: black;
+}
+
 
 /* Footer styling */
 footer {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    text-align: center;
     padding: 20px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-
 /* Ensure uniform height for images */
 .service img {
     height: 400px; /* Adjust the height as needed */
@@ -242,4 +257,56 @@ h1 {
 
 p {
     color: #666; /* Lighter text color */
+}
+
+/* Adjust header styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 2%; /* Reduce padding for smaller screens */
+        box-shadow: 0 0.1em 0.2em rgba(73, 219, 187, 0.5); /* Adjust box shadow */
+    }
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .hero {
+        padding: 20% 0; /* Adjust padding for smaller screens */
+    }
+
+    .hero h2 {
+        font-size: 2em; /* Decrease font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1em; /* Decrease font size for smaller screens */
+    }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    header {
+        padding: 2%; /* Reduce padding for smaller screens */
+        box-shadow: 0 0.1em 0.2em rgba(73, 219, 187, 0.5); /* Adjust box shadow */
+    }
+    .hero {
+        padding: 15% 0; /* Adjust padding for medium screens */
+    }
+
+    .hero h2 {
+        font-size: 2.5em; /* Decrease font size for medium screens */
+    }
+
+    .hero p {
+        font-size: 1.1em; /* Decrease font size for medium screens */
+    }
+}
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 993px) {
+    /* Adjust styles for large screens */
 }
