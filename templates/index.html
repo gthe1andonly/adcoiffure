@@ -2,11 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>A&D Coiffure Du Monde</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-<body>
+<bod class="is-preloaded">
+
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
+                    <ul class="icons">
+
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://wa.me/(+1)2404216230" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>A&D Coiffure du monde</h1>
+                            <p>The best hair salon for braids"</p>
+                        </header>
+                        <p>Welcome to A&D Coiffure du Monde, your one-stop shop for all your haircare needs! We are a team of licensed stylists based in Gaithersburg, MD, passionate about helping you achieve your hair goals and cultivate healthy, beautiful hair.</p>
+                            
+                        <ul class="actions">
+                            <li><a href="/about" class="button big">Learn More</a></li>
+                        </ul>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+
+                <section>
+                    <header class="major">
+                        <h2>Our Advantages:</h2>
+                    </header>
+                    <div class="features">
+                        <article>
+                            <span class="icon fa-gem"></span>
+                            <div class="content">
+                                <h3>Expert Stylists</h3>
+                            <p>Our team of professional stylists is dedicated to providing personalized service tailored to your unique needs and preferences.</p>	
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-gem"></span>
+                            <div class="content">
+                                <h3> High-Quality-Products</h3>
+                                <p>We use only the highest quality products to ensure your hair looks and feels its best, from leading brands in the industry.</p>	
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-gem"></span>
+                            <div class="content">
+                                <h3>Inclusive Environment</h3>
+                                <p> We welcome men, women, and children of all ages and backgrounds. Our salon is a welcoming space where you can feel comfortable and confident while we work our magic on your hair.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-gem"></span>
+                            <div class="content">
+                                <h3>Braiding Masters:</h3>
+                            <p>Braids are our specialty! We offer a wide range of trendy and timeless styles, from classic cornrows and box braids to intricate Senegalese twists and faux locs. We can also create custom styles to match your unique personality and preferences.</p>	
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <header class="major">
+                        <h2>Our services</h2>
+                    </header>
+                    <div class="posts">
+                        <article>
+                            <a href="#" class="image"><img src="/static/images/img1.jpg" alt="" /></a>
+                            <h3>Braids</h3>
+                            <p>Embrace the intricate artistry of braids with our team of expert stylists at A&D Coiffure du Monde. We specialize in crafting a diverse range of braided styles to complement your unique personality and hair type. Whether you desire classic cornrows, intricate box braids, or elegant waterfall braids, our stylists possess the mastery to transform your hair into a masterpiece.</p>
+                            <ul class="actions">
+                                <li><a href="braids.html" class="button">See More</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="/static/images/img5.jpg" alt="" /></a>
+                            <h3>Chimical and Natural Service</h3>
+                            <p>At A&D Coiffure du Monde, we are committed to empowering you with a transformative hair journey tailored to your individual needs and aspirations. Our team of skilled stylists is proficient in both chemical and natural hair services, ensuring that your hair receives the expert care it deserves.</p>
+                            <ul class="actions">
+                                <li><a href="treatement.html" class="button">See More</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="/static/images/hairextension.jpg" alt="" /></a>
+                            <h3>Hair extensions</h3>
+                            <p>At A&D Coiffure du Monde, we believe that hair extensions are not just about adding length or volume; they are about empowering you to express your individuality and achieve the hairstyle of your dreams. Our team of certified extension specialists possesses the expertise to seamlessly integrate high-quality hair extensions into your natural hair, creating a look that is both natural-looking and undeniably captivating.</p>
+                            <ul class="actions">
+                                <li><a href="extension.html" class="button">See More</a></li>
+                            </ul>
+                        </article>
+                        
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+                <nav>
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+
+                    <ul>
+                        <li class="uid"><a href="index.html" >Home</a></li>
+                        <li><a href="bookapp.html">Book Appoinement</a></li>
+                    
+                        <li>
+                            <span class="opener">Services</span>
+                            <ul>
+                                <li><a href="braids.html">Braids</a></li>
+                                <li><a href="treatement.html">Chemical and Natural Service</a></li>
+                                <li><a href="services.html">Extensions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Promotions or Offers</a></li>
+                        <li><a href="contactus.html">Contact Us:</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        
+                    </ul>
+                </nav>
+
+                <section>
+                    <header class="major">
+                        <h2>Contact Us</h2>
+                    </header>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
+                        <li class="icon solid fa-phone">+1 (240) 421-6230</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                        572 N Frederick Ave, Suite 106 Gaithersburg MS20877 Maryland, USA</li>
+                    </ul>
+                </section>
+
+                <footer id="footer">
+                    <p>© 2024 A&D Coiffure. All rights reserved.</p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="footer">
+        <section >
+            <header class="major majorr">
+                <h2>Contact Us</h2>
+            </header>
+            <ul class="contact">
+                <li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
+                <li class="icon solid fa-phone"><a href="">+1 (240) 421-6230</a></li>
+                <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=61559927362692">A&D Coiffure du monde</a></li>
+                <li class="icon brands fa-whatsapp"><a href="https://wa.me/(+1)2404216230">+1 (240) 421-6230</a></li>
+                <li class="icon brands fa-instagram"><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==">touched by aimee</a></li>
+
+                <li class="icon solid fa-home"><br />
+                572 N Frederick Ave, Suite 106 Gaithersburg MS20877 Maryland, USA</li>
+            </ul>
+        </section>
+        <p>© 2024 A&D Coiffure. All rights reserved.</p>
+    </footer>
+
+    
+
     <header>
         <h1 class="pageheader">A&D coiffure du monde</h1>
         <nav>
@@ -20,9 +190,7 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
-            
-        </section>
+       
         <section class="features">
             <div class="feature">
                 <h3>Contact</h3>
@@ -44,8 +212,16 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 A&D Coiffure du Monde. All rights reserved.</p>
     </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/browser.min.js"></script>
+	<script src="/static/js/breakpoints.min.js"></script>
+	<script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
