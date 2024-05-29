@@ -18,9 +18,25 @@ def about():
 def appointments():
     return render_template('appointments.html')
 
+@app.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
+
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
+
+@app.route('/braidsgallery')
+def braidsgallery():
+    return render_template('braidsgallery.html')
+
+@app.route('/treatmentgallery')
+def treatmentgallery():
+    return render_template('treatmentgallery.html')
+
+@app.route('/extensionsgallery')
+def extensiongallery():
+    return render_template('extensionsgallery.html')
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)

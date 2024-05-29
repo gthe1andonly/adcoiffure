@@ -4,38 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-<body>
-    <header>
-        <h1 class="pageheader">About Us</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/listings">Services</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/appointments">Book Appointment</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="about">
-            <h2>Welcome to A&D coiffure du monde!</h2>
+
+<body class="is-preload">
+
+    <div id="wrapper">
         
-            <h2>About Us</h2>
-            <p>We are licensed stylist based in Gaithersburg MD. 
-            We are spécialize in all hair texture and our mission 
-            is growing healthy hair and make sure you are confortable 
-            when You're in our space while making your  Dreams hair. 
-            Whether You're looking for fresh new cut, hair extension 
-            color, braids... we have you covere. Don't wait come and 
-            have a relaxing time and be more beautiful after enjoyind
-            our service.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 A&D Coiffure. All rights reserved.</p>
-    </footer>
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
+                    <ul class="icons">
+
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>A&D Coiffure du monde</h1>
+                            <p>The best hair salon for braids"</p>
+                        </header>
+                        <p>Welcome to A&D Coiffure du Monde, your one-stop shop for all your haircare needs! We are a team of licensed stylists based in Gaithersburg, MD, passionate about helping you achieve your hair goals and cultivate healthy, beautiful hair.</p>
+                            
+                        <ul class="actions">
+                            <li><a href="/" class="button big">Home</a></li>
+                        </ul>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+
+                <div>
+                    <p><h2>Our Expertise:</h2></p>
+                    <ul>
+                        <li><strong>Texture Specialists: </strong>We specialize in working with all hair textures, from straight and fine to coily and coarse. Our stylists have extensive knowledge and experience catering to the unique needs of each hair type.</li>
+                        <li><strong>Braiding Masters:</strong>  Braids are our specialty! We offer a wide range of trendy and timeless styles, from classic cornrows and box braids to intricate Senegalese twists and faux locs. We can also create custom styles to match your unique personality and preferences.</li> 
+                        <li><strong> Hair Transformation Artists:</strong> Whether you're looking for a dramatic haircut, a touch of color with highlights or balayage, or beautiful hair extensions for added length and volume, our stylists have the skills and creativity to bring your vision to life.</li>
+                        <li><strong>Chemical Treatment Experts: </strong> Considering a chemical treatment like a perm, relaxer, or keratin smoothing? Our stylists are highly trained in using the latest techniques and high-quality products to achieve the desired results while prioritizing the health of your hair.</li>
+                        <li><strong>Inclusive Environment:</strong> We welcome men, women, and children of all ages and backgrounds. Our salon is a welcoming space where you can feel comfortable and confident while we work our magic on your hair.</li>
+                    </ul>
+                    <p><h2>More Than Just Hair:</h2></p>
+                    <p>A&D Coiffure du Monde is more than just a hair salon; it's an experience. We believe that getting your hair done should be a relaxing and enjoyable experience.  That's why we offer a comfortable and inviting atmosphere, complete with friendly service and personalized attention.</p>
+                    <p><h3>Ready to Experience the A&D Difference?</h3></p>
+                    <p>Contact us today!</p>
+                    <ul>
+                        <li><strong>Call us:</strong> +1 (240) 421-6230</li>
+                        <li><strong>Email us:</strong>  braidedbyaimee@gmail.com</li>
+                        <li><strong> Visit us:</strong> 572 N Frederick Ave, Suite 106 Gaithersburg, MD 20877, USA <br/><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.1518500366437!2d-77.21297072278966!3d39.14852773184513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b62d27a5528a4d%3A0x78c200ae9216c884!2s572%20N%20Frederick%20Ave%20%23106%2C%20Gaithersburg%2C%20MD%2020877!5e0!3m2!1sen!2sus!4v1716822697244!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+                    </ul>
+                    <p>
+                        Don't wait any longer! Book your appointment today and let us turn your hair dreams into reality!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li ><a href="/" >Home</a></li>
+                            <li><a href="/appointments">Book Appoinement</a></li>
+                            <li>
+                                <span class="opener">Services</span>
+                                <ul>
+                                    <li><a href="/braidsgallery">Braids</a></li>
+                                    <li><a href="/treatmentgallery">Chemical and Natural Service</a></li>
+                                    <li><a href="/extensionsgallery">Extensions</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Promotions or Offers</a></li>
+                            <li><a href="/contactus">Contact Us:</a></li>
+                            <li class="uid"><a href="/about">About Us</a></li>
+                            
+                        </ul>
+                    </nav>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <footer id="footer" class="footer">
+				<section >
+					<header class="major majorr">
+						<h2>Contact Us</h2>
+					</header>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
+						<li class="icon solid fa-phone"><a href="">+1 (240) 421-6230</a></li>
+						<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=61559927362692">A&D Coiffure du monde</a></li>
+						<li class="icon brands fa-whatsapp"><a href="https://wa.me/(+1)2404216230">+1 (240) 421-6230</a></li>
+						<li class="icon brands fa-instagram"><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==">touched by aimee</a></li>
+						<li class="icon solid fa-home">572 N Frederick Ave, Suite 106 Gaithersburg MD20877 Maryland, USA</li>
+					</ul>
+				</section>
+				<p>© 2024 A&D Coiffure. All rights reserved.</p>
+			</footer>
+
+			<script src="/static/js/main.js"></script>
+            <script src="/static/js/jquery.min.js"></script>
+            <script src="/static/js/browser.min.js"></script>
+            <script src="/static/js/breakpoints.min.js"></script>
+            <script src="/static/js/util.js"></script>
+            <script src="static/js/main.js"></script>
+
 </body>
 </html>

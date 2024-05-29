@@ -19,4 +19,4 @@ COPY templates ./templates
 COPY static ./static
 
 # Specify the command to run on container start
-CMD [ "python", "./app.py" ]
+CMD gunicorn --bind 0.0.0.0:5000 app:app

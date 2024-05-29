@@ -6,15 +6,16 @@
     <title>A&D Coiffure Du Monde</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
+
 <bod class="is-preloaded">
 
     <div id="wrapper">
         <div id="main">
             <div class="inner">
+                <!-- Header containing salon name and socials -->
                 <header id="header">
                     <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
                     <ul class="icons">
-
                         <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
                         <li><a href="https://wa.me/(+1)2404216230" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
                         <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -112,46 +113,28 @@
 
         <div id="sidebar">
             <div class="inner">
-                <nav>
-                    <header class="major">
-                        <h2>Menu</h2>
-                    </header>
 
-                    <ul>
-                        <li class="uid"><a href="index.html" >Home</a></li>
-                        <li><a href="bookapp.html">Book Appoinement</a></li>
-                    
-                        <li>
-                            <span class="opener">Services</span>
-                            <ul>
-                                <li><a href="braids.html">Braids</a></li>
-                                <li><a href="treatement.html">Chemical and Natural Service</a></li>
-                                <li><a href="services.html">Extensions</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Promotions or Offers</a></li>
-                        <li><a href="contactus.html">Contact Us:</a></li>
-                        <li><a href="aboutus.html">About Us</a></li>
-                        
-                    </ul>
-                </nav>
-
-                <section>
-                    <header class="major">
-                        <h2>Contact Us</h2>
-                    </header>
-                    <ul class="contact">
-                        <li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
-                        <li class="icon solid fa-phone">+1 (240) 421-6230</li>
-                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-                        572 N Frederick Ave, Suite 106 Gaithersburg MS20877 Maryland, USA</li>
-                    </ul>
-                </section>
-
-                <footer id="footer">
-                    <p>© 2024 A&D Coiffure. All rights reserved.</p>
-                </footer>
-
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li ><a href="/" >Home</a></li>
+                            <li><a href="/appointments">Book Appoinement</a></li>
+                            <li>
+                                <span class="opener">Services</span>
+                                <ul>
+                                    <li><a href="/braidsgallery">Braids</a></li>
+                                    <li><a href="/treatmentgallery">Chemical and Natural Service</a></li>
+                                    <li><a href="/extensionsgallery">Extensions</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Promotions or Offers</a></li>
+                            <li><a href="/contactus">Contact Us:</a></li>
+                            <li class="uid"><a href="/about">About Us</a></li>
+                            
+                        </ul>
+                    </nav>
             </div>
         </div>
     </div>
@@ -167,54 +150,10 @@
                 <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=61559927362692">A&D Coiffure du monde</a></li>
                 <li class="icon brands fa-whatsapp"><a href="https://wa.me/(+1)2404216230">+1 (240) 421-6230</a></li>
                 <li class="icon brands fa-instagram"><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==">touched by aimee</a></li>
-
-                <li class="icon solid fa-home"><br />
-                572 N Frederick Ave, Suite 106 Gaithersburg MS20877 Maryland, USA</li>
+                <li class="icon solid fa-home">572 N Frederick Ave, Suite 106 Gaithersburg MD20877 Maryland, USA</li>
             </ul>
         </section>
         <p>© 2024 A&D Coiffure. All rights reserved.</p>
-    </footer>
-
-    
-
-    <header>
-        <h1 class="pageheader">A&D coiffure du monde</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/listings">Services</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/appointments">Book Appointment</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-       
-        <section class="features">
-            <div class="feature">
-                <h3>Contact</h3>
-                <table class="table">
-                    <tr><th>Phone</th><td>240-421-6230</td></tr>
-                    <tr><th>Email</th><td>braidedbyaimee@gmail.com</td></tr>
-                </table>
-            </div>
-            <div class="feature">
-                <h3>Hours of Operation</h3>
-                <table class="table">
-                    <tr><th>Mon - Fri</th><td>9am - 6pm</td></tr>
-                    <tr><th>Sun</th><td>9am - 2pm</td></tr>
-                </table>                    
-            </div>
-            <div class="feature">
-                <h3>Address</h3>
-                <p>572 North Frederic Ave, Suite 106 <br\> Gaithersburg MD</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 A&D Coiffure du Monde. All rights reserved.</p>
     </footer>
 
     <script src="/static/js/main.js"></script>

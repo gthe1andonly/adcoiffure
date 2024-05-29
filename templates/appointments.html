@@ -4,33 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <header>
-        <h1 class="pageheader">Book Appointment</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/listings">Services</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/appointments">Book Appointment</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!-- Placeholder for Setmore widget -->
-        <div id="setmore_widget" class="bookingwidget">
-            <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script>
-            <a style="float:none; " id="Setmore_button_iframe"  href="https://booking.setmore.com/scheduleappointment/968e2fe6-005f-4b50-97a3-773e22e4e9e9">
-                <img border="none" src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg" alt="Book an appointment with Aimee using Setmore"/>
-            </a>
+    
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Setmore widget for booking appointments -->
+                <div id="setmore_widget" class="bookingwidget">
+                    <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script>
+                    <a style="float:none; " id="Setmore_button_iframe"  href="https://booking.setmore.com/scheduleappointment/968e2fe6-005f-4b50-97a3-773e22e4e9e9">
+                        <img border="none" src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg" alt="Book an appointment with Aimee using Setmore"/>
+                    </a>
+                </div>
+            </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Hair Salon. All rights reserved.</p>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li ><a href="/" >Home</a></li>
+                            <li><a href="/appointments">Book Appoinement</a></li>
+                            <li>
+                                <span class="opener">Services</span>
+                                <ul>
+                                    <li><a href="/braidsgallery">Braids</a></li>
+                                    <li><a href="/treatement">Chemical and Natural Service</a></li>
+                                    <li><a href="/services">Extensions</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Promotions or Offers</a></li>
+                            <li><a href="/contactus">Contact Us:</a></li>
+                            <li class="uid"><a href="/about">About Us</a></li>
+                            
+                        </ul>
+                    </nav>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="footer" class="footer">
+        <section >
+            <header class="major majorr">
+                <h2>Contact Us</h2>
+            </header>
+            <ul class="contact">
+                <li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
+                <li class="icon solid fa-phone"><a href="">+1 (240) 421-6230</a></li>
+                <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=61559927362692">A&D Coiffure du monde</a></li>
+                <li class="icon brands fa-whatsapp"><a href="https://wa.me/(+1)2404216230">+1 (240) 421-6230</a></li>
+                <li class="icon brands fa-instagram"><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==">touched by aimee</a></li>
+                <li class="icon solid fa-home">572 N Frederick Ave, Suite 106 Gaithersburg MD20877 Maryland, USA</li>
+            </ul>
+        </section>
+        <p>© 2024 A&D Coiffure. All rights reserved.</p>
     </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/browser.min.js"></script>
+	<script src="/static/js/breakpoints.min.js"></script>
+	<script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
 
