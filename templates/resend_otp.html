@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resend OTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+                /* Conteneur principal pour les flash messages */
+        .flash-messages {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Assure que les messages apparaissent au-dessus du contenu */
+            width: 300px;
+        }
+
+        /* Style général pour tous les flash messages */
+        .flash-messages div {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInOut 5s ease-in-out forwards;
+        }
+
+        /* Style pour les messages de succès */
+        .flash-success {
+            background-color: #d4edda; /* Vert clair */
+            color: #155724; /* Vert foncé */
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Style pour les messages d'erreur */
+        .flash-error {
+            background-color: #f8d7da; /* Rouge clair */
+            color: #721c24; /* Rouge foncé */
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Style pour les messages d'information */
+        .flash-info {
+            background-color: #cce5ff; /* Bleu clair */
+            color: #0c5460; /* Bleu foncé */
+            border: 1px solid #b8daff;
+        }
+
+        /* Animation pour faire apparaître et disparaître les messages */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resend OTP</h1>
+        <p>A new OTP has been sent to your email address. Please check your inbox and enter the code on the verification page.</p>
+        <p>Didn't receive the email? <a href="{{ url_for('resend_otp') }}">Resend OTP</a></p>
+        <p>Return to <a href="{{ url_for('verify_otp') }}">Verify OTP</a>.</p>
+    </div>
+</body>
+</html>

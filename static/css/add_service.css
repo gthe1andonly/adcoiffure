@@ -1,0 +1,73 @@
+/* Main content styling */
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Fond blanc pour un look propre */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-top: 20px;
+}
+
+/* Form styling */
+main form {
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+/* Labels styling */
+main form label {
+    display: block;
+    font-size: 14px;
+    margin-top: 15px; /* Espacement entre les champs */
+    color: #555; /* Gris pour un look doux */
+    font-weight: bold; /* Texte en gras pour les labels */
+}
+
+/* Input fields and textarea styling */
+main form input[type="text"],
+main form input[type="number"],
+main form select,
+main form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Bordure grise légère */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+main form input:focus,
+main form select:focus,
+main form textarea:focus {
+    border-color: #2e7d32; /* Vert au focus */
+    outline: none;
+}
+
+/* File upload styling */
+main form input[type="file"] {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+
+
+
+/* Flash messages styling */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main ul li {
+    background-color: #f8d7da; /* Rouge clair pour les erreurs */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}

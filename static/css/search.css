@@ -1,0 +1,52 @@
+
+    
+
+/* Conteneur principal pour la barre de recherche */
+.search-bar {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    margin-bottom: -120px ;/* Espacement autour de la barre de recherche */
+    padding-top: 20px;
+
+}
+
+.search-form{
+    display: flex;
+    gap: 5px;
+}
+.btn-search{
+    font-size: 8px;
+}
+/* .center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+} */
+
+
+
+/* Hover sur le champ de saisie */
+.search-bar input[type="text"]:focus {
+    border-color: #2e7d32; /* Bordure verte lorsqu'on clique dessus */
+}
+
+/* Style du bouton de recherche */
+
+
+/* Hover sur le bouton de recherche */
+.search-bar button:hover {
+    background-color: #1b5e20; /* Vert plus foncé au survol */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search-bar input[type="text"] {
+        width: 200px; /* Réduit la largeur pour les petits écrans */
+    }
+
+    .search-bar button {
+        padding: 8px 15px; /* Réduit l'espacement interne */
+        font-size: 0.9rem; /* Réduit la taille de police */
+    }
+}

@@ -1,0 +1,148 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fond gris clair */
+    color: #333; /* Texte gris foncé */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Title styling */
+h2 {
+    text-align: center;
+    color: #2e7d32; /* Vert */
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+
+/* Flash messages styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul li {
+    background-color: #f8d7da; /* Rouge clair pour les erreurs */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form container styling */
+form {
+    max-width: 500px; /* Largeur maximale pour un look équilibré */
+    margin: 0 auto; /* Centrage horizontal */
+    background-color: #ffffff; /* Fond blanc */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Labels styling */
+label {
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #555; /* Gris pour un look doux */
+    font-weight: bold;
+}
+
+/* Input fields styling */
+input[type="date"],
+input[type="time"] {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Bordure grise légère */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+    border-color: #2e7d32; /* Vert au focus */
+    outline: none;
+}
+
+/* Date picker styling */
+input[type="date"] {
+    appearance: none; /* Désactive les styles natifs du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    background-color: #fff; /* Fond blanc */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232e7d32' viewBox='0 0 16 16'%3E%3Cpath d='M14 3h-1V1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2H0v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3zm-3 0V1h1v2h-1zM4 1v2h1V1H4zm6 0v2h1V1h-1zM2 5h12V3H2v2zm0 12V5h12v12H2z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positionne l'icône à droite */
+    background-size: 20px; /* Taille de l'icône */
+    padding-right: 40px; /* Espace pour l'icône */
+}
+
+/* Time picker styling */
+input[type="time"] {
+    appearance: none; /* Désactive les styles natifs du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    background-color: #fff; /* Fond blanc */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232e7d32' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zm0-1.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positionne l'icône à droite */
+    background-size: 20px; /* Taille de l'icône */
+    padding-right: 40px; /* Espace pour l'icône */
+}
+
+/* Submit button styling */
+button {
+    display: block;
+    width: 100%; /* Prend toute la largeur disponible */
+    
+    
+    color: #fff; /* Texte blanc */
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+button:hover {
+    background-color: #98e99d; /* Vert plus foncé au survol */
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="date"],
+    input[type="time"],
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.btn{
+    margin: 20px;
+}

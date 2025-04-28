@@ -1,0 +1,102 @@
+/* Main content styling */
+main {
+    padding: 30px; /* Increased padding for more breathing room */
+    background-color: #ffffff; /* Solid white background for better contrast */
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
+    margin-top: 30px; /* Increased top margin */
+    margin-bottom: 30px; /* Added bottom margin for spacing */
+    border: 1px solid #e0e0e0; /* Subtle border for definition */
+}
+
+/* Admin table styling */
+main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px; /* Increased bottom margin for the table */
+    background-color: #f8f8f8; /* Light grey background for the table */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures rounded corners are respected */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow for the table */
+    border: 1px solid #ddd; /* Subtle border for the table */
+}
+
+main table thead {
+    
+    color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
+}
+
+main table th,
+main table td {
+    padding: 15px; /* Increased padding for better readability */
+    text-align: left;
+    border-bottom: 1px solid #eee; /* Lighter border between rows */
+}
+
+main table th {
+    font-weight: 600; /* Slightly bolder font for headings */
+    font-size: 15px; /* Slightly larger font size for headings */
+    
+}
+.action{
+    text-align: center;
+}
+main table td {
+    font-size: 14px;
+    color: #444; /* Darker text color */
+}
+
+main table tr:last-child td {
+    border-bottom: none; /* Remove border from the last row */
+}
+
+
+
+main .btn-warning {
+    
+    color: #212529; /* Dark text for better contrast */
+}
+
+main .btn-danger {
+    background-color: rgb(250, 157, 157);
+    color : white;
+}
+
+main .btn-warning:hover {
+  
+    transform: scale(1.03); /* Slightly less aggressive zoom */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+
+
+
+
+main .btn-danger:hover {
+    
+    transform: scale(1.03); /* Slightly less aggressive zoom */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+/* No admins message styling */
+main p {
+    
+    font-size: 16px;
+    color: #777; /* Slightly lighter grey */
+    margin-top: 30px; /* Increased top margin */
+    padding: 15px; /* Add some padding around the message */
+    background-color: #fdfdfd; /* Very light grey background */
+    border-radius: 8px; /* Rounded corners for the message box */
+    border: 1px solid #eee; /* Subtle border for the message box */
+}
+
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+table{
+    width: 100%;
+    min-width: 600px;
+}

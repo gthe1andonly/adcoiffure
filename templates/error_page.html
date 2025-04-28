@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Something Went Wrong</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error_page.css') }}">
+</head>
+<body>
+    
+                <!-- Section to display flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul>
+                        {% for category, message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+    <div class="error-container">
+        <h1>Oops! Something went wrong.</h1>
+        <p>We encountered an unexpected error while processing your request. Please try again later or contact support if the issue persists.</p>
+        <p>{{ error_message }}</p>
+        
+        <a href="{{ url_for('index') }}" class="back-home-button">Return to Homepage</a>
+        
+    </div>
+</body>
+</html>

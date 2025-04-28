@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <style>
+            /* Reset styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column; /* Aligner les éléments verticalement */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px; /* Ajout de padding pour éviter le débordement sur mobile */
+        }
+
+        /* Container for the form */
+        .otp-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px; /* Largeur maximale pour les grands écrans */
+            text-align: center;
+            box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+        }
+
+        /* Title */
+        h1 {
+            font-size: 24px;
+            color: #2e7d32; /* Green */
+            margin-bottom: 20px;
+        }
+
+        /* Input field */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+        }
+
+        input[type="text"]:focus {
+            border-color: #2e7d32; /* Green */
+            outline: none;
+        }
+
+        /* Submit button */
+        button {
+            background-color: #438046; /* Green */
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Le bouton occupe toute la largeur sur les petits écrans */
+        }
+
+        button:hover {
+            background-color: #306d34; /* Darker green */
+        }
+
+        /* Resend OTP link */
+        p {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #3d8541; /* Green */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Success message */
+        .success-message {
+            color: #2e7d32; /* Green */
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+                /* Conteneur principal pour les flash messages */
+        .flash-messages {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Assure que les messages apparaissent au-dessus du contenu */
+            width: 300px;
+        }
+
+        /* Style général pour tous les flash messages */
+        .flash-messages div {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInOut 5s ease-in-out forwards;
+        }
+
+        /* Style pour les messages de succès */
+        .flash-success {
+            background-color: #d4edda; /* Vert clair */
+            color: #155724; /* Vert foncé */
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Style pour les messages d'erreur */
+        .flash-error {
+            background-color: #f8d7da; /* Rouge clair */
+            color: #721c24; /* Rouge foncé */
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Style pour les messages d'information */
+        .flash-info {
+            background-color: #cce5ff; /* Bleu clair */
+            color: #0c5460; /* Bleu foncé */
+            border: 1px solid #b8daff;
+        }
+
+        /* Animation pour faire apparaître et disparaître les messages */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+        /* Media Queries pour les petits écrans */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Réduire le padding pour les petits écrans */
+            }
+
+            h1 {
+                font-size: 20px; /* Réduire la taille du titre */
+            }
+
+            input[type="text"],
+            button {
+                font-size: 14px; /* Réduire la taille du texte pour les champs et boutons */
+                padding: 10px; /* Réduire le padding */
+            }
+
+            .otp-container {
+                padding: 20px; /* Réduire le padding du conteneur */
+            }
+
+            p {
+                font-size: 12px; /* Réduire la taille du texte pour le lien "Resend OTP" */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section to display flash messages -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="otp-container">
+        <h1>Verify OTP</h1>
+        <form method="POST" action="{{ url_for('verify_otp') }}">
+            <input type="text" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <p>Didn't receive the OTP? <a href="{{ url_for('resend_otp') }}">Resend OTP</a></p>
+
+        <!-- Display success message if OTP was sent -->
+        {% if otp_sent %}
+            <p class="success-message">OTP has been sent to your email.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

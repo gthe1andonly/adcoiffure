@@ -1,0 +1,37 @@
+<!-- templates/book-appointment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book-appointment.css') }}">
+    <title>Book Appointment - ADCoiffure</title>
+</head>
+<body>
+    <h2>Book Appointment for {{ service.name }}</h2>
+
+    <!-- Section to display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('book_appointment', service_id=service.id) }}" method="POST">
+      
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Confirm Booking</button>
+        <a href="{{ url_for('index') }}"  class="btn">Return to Homepage</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_list.css') }}">
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>Users List</h1>
+                            <p>Manage all users on the platform</p>
+                            <!-- Section to display flash messages -->
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                <ul>
+                                    {% for category, message in messages %}
+                                        <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            {% endwith %}
+                        </header>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+       
+                <main>
+                    <div class="admin">
+                        {% if users %}
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td>{{ user.username }}</td>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.role }}</td>
+                                            <td>
+                                                
+                                                <a href="{{ url_for('edit_user', user_id=user.id) }}"><button>Edit</button></a>
+                                                 <!-- Formulaire pour supprimer un utilisateur -->
+                                                    
+                                                <form action="{{ url_for('delete_user', user_id=user.id) }}" method="POST" style="display:inline;">
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?');">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                                    
+                                                                            
+                                            </td>
+                                            <td>
+                                                {% if user.role != 'admin' %}
+                                                <form action="{{ url_for('promote_to_admin', user_id=user.id) }}" method="POST" style="display:inline;">
+                                                    <button type="submit" class="btn btn-primary">Promote to Admin</button>
+                                                </form>
+                                                {% else %}
+                                                <span>Already Admin</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% else %}
+                            <p>No users available.</p>
+                        {% endif %}
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li ><a href="/" >Back to site</a></li>
+                        <li><a href="{{url_for('admin_guide')}}">Admin guide</a></li>
+                        <li><a href="{{url_for('admin_dashboard')}}">Admin Dashboard</a></li>
+                        <li><a href="{{url_for('add_admin')}}">Add admin</a></li>
+                        <li><a href="{{url_for('admin_list')}}">Manage Admin</a></li>
+                        <li><a href="{{url_for('user_list')}}">Users List</a></li>
+                        <li><a href="{{url_for('add_service')}}">Add Services</a></li>
+                        <li><a href="{{url_for('add_promotion')}}">Add Promotions</a></li>
+                        <li><a href="{{url_for('promotions_admin')}}">Manage Promotions or Offers</a></li>
+                        <li><a href="{{url_for('admin_reservation')}}">Manage reservations</a></li>
+                        <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

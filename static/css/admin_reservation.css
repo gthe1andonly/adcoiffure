@@ -1,0 +1,29 @@
+/* Alignement des boutons horizontalement */
+td form {
+    display: inline-flex;
+}
+.btn {
+    margin-right: 5px;
+    display: inline-block; /* Assure que les boutons sont en ligne */
+}
+.btn-danger {
+    background-color: #f1807e; /* Rouge vif */
+    color: #fff; /* Texte blanc */
+}
+.btn-primary {
+    background-color: #a5fdab; /* Vert vif */
+    color: #fff; /* Texte blanc */
+}
+
+/* Rend les boutons responsive */
+@media (max-width: 768px) {
+    td form {
+        display: block; /* Les boutons s'empilent sur les petits écrans */
+    }
+    .btn {
+        margin-bottom: 10px; /* Ajoute un espace entre les boutons */
+        width: 100%; /* Les boutons prennent toute la largeur */
+    }
+}
+
+

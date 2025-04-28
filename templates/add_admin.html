@@ -1,0 +1,115 @@
+<!-- This is the HTML template for the add admin of the A&D Coiffure du Monde website. It displays a list of reservations and allows the admin to validate or reject them. The template uses Jinja2 syntax for dynamic content rendering. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+    <script>
+        
+    </script>
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong>Coiffure Du Monde</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>Add Admin</h1>
+                            <p>Add your admin easily</p>
+                        </header>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+       
+            <main>
+                
+                
+                <!-- Section to display flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul>
+                        {% for category, message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+
+                <h2>Add Admin</h2>
+                <form action="/add_admin" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+
+                    <button type="submit">Add Admin</button>
+                </form>
+            </main>
+
+   
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="/">Back to Site</a></li>
+                        <li><a href="{{url_for('admin_guide')}}">Admin guide</a></li>
+                        <li><a href="{{url_for('admin_dashboard')}}">Admin Dashboard</a></li>
+                        <li><a href="{{url_for('add_admin')}}">Add Admin</a></li>
+                        <li><a href="{{url_for('admin_list')}}">Manage Admins</a></li>
+                        <li><a href="{{url_for('user_list')}}">Users List</a></li>
+                        <li><a href="{{url_for('add_service')}}">Add Services</a></li>
+                        <li><a href="{{url_for('add_promotion')}}">Add Promotions</a></li>
+                        <li><a href="{{url_for('promotions_admin')}}">Manage Promotions or Offers</a></li>
+                        <li><a href="{{url_for('admin_reservation')}}">Manage Reservations</a></li>
+                        <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

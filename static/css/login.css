@@ -1,0 +1,189 @@
+/* Reset styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto; /* Permettre le défilement vertical si nécessaire */
+}
+
+/* Container for the form */
+.login-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    font-size: 24px;
+    color: #2e7d32; /* Green */
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+    text-align: left; /* Align text to the left */
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2e7d32; /* Green */
+    outline: none;
+}
+
+button:hover {
+    background-color: #306d34; /* Darker green */
+}
+
+/* Link to register */
+p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+a {
+    color: #3d8541; /* Green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages container */
+.flash-messages {
+    position: absolute;
+    top: 20px; /* Positionné en haut de la page */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1000; /* S'assurer que les messages sont au-dessus du contenu */
+}
+
+/* Styles for success and error messages */
+.flash-success {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724; /* Vert foncé */
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flash-error {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Style de base pour la case à cocher */
+.remember-me-checkbox {
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    width: 20px; /* Largeur de la case */
+    height: 20px; /* Hauteur de la case */
+    border: 2px solid #ccc; /* Bordure grise par défaut */
+    border-radius: 4px; /* Coins légèrement arrondis */
+    outline: none; /* Supprime la bordure de focus par défaut */
+    cursor: pointer; /* Curseur en forme de main pour indiquer qu'elle est cliquable */
+    transition: all 0.3s ease; /* Animation fluide pour les transitions */
+    margin-right: 8px; /* Espace entre la case et le texte */
+}
+
+/* Changement d'apparence lorsque la case est cochée */
+.remember-me-checkbox:checked {
+    border-color: #51f06b; /* Bordure bleue lorsqu'elle est cochée */
+    background-color: #61f168; /* Fond bleu lorsqu'elle est cochée */
+}
+
+/* Ajout d'une coche blanche (✔) lorsque la case est cochée */
+.remember-me-checkbox:checked::after {
+    content: "✔"; /* Symbole de coche */
+    font-size: 14px; /* Taille de la coche */
+    color: #ffffff; /* Couleur blanche pour la coche */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 20px; /* Alignement vertical de la coche */
+}
+
+/* Style pour le label associé à la case à cocher */
+.remember-me-label {
+    display: flex; /* Alignement horizontal de la case et du texte */
+    align-items: center; /* Alignement vertical */
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main pour tout le label */
+}
+
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Réduire le padding pour les petits écrans */
+    }
+
+    h2 {
+        font-size: 20px; /* Réduire la taille du titre */
+    }
+
+    input[type="email"],
+    input[type="password"],
+   
+
+    .login-container {
+        padding: 20px; /* Réduire le padding du conteneur */
+    }
+
+    label {
+        font-size: 12px; /* Réduire la taille du texte pour les labels */
+    }
+
+    p {
+        font-size: 12px; /* Réduire la taille du texte pour le lien "Register" */
+    }
+
+    .remember-me-checkbox {
+        width: 18px; /* Réduire la taille de la case à cocher */
+        height: 18px;
+    }
+
+    .remember-me-label {
+        font-size: 14px; /* Réduire la taille du texte pour le label */
+    }
+}
+
+

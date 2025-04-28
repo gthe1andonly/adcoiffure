@@ -1,0 +1,216 @@
+<!-- This is the HTML template for the admin dashboard of the A&D World Hairdressing website. It displays a list of reservations and allows the admin to validate or reject them. The template uses Jinja2 syntax for dynamic content rendering. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+                /* Conteneur principal pour les flash messages */
+                .flash-messages {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 1000; /* Assure que les messages apparaissent au-dessus du contenu */
+                    width: 300px;
+                }
+        
+                /* Style général pour tous les flash messages */
+                .flash-messages div {
+                    margin-bottom: 10px;
+                    padding: 15px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    animation: fadeInOut 5s ease-in-out forwards;
+                }
+        
+                /* Style pour les messages de succès */
+                .flash-success {
+                    background-color: #d4edda; /* Vert clair */
+                    color: #155724; /* Vert foncé */
+                    border: 1px solid #c3e6cb;
+                }
+        
+                /* Style pour les messages d'erreur */
+                .flash-error {
+                    background-color: #f8d7da; /* Rouge clair */
+                    color: #721c24; /* Rouge foncé */
+                    border: 1px solid #f5c6cb;
+                }
+        
+                /* Style pour les messages d'information */
+                .flash-info {
+                    background-color: #cce5ff; /* Bleu clair */
+                    color: #0c5460; /* Bleu foncé */
+                    border: 1px solid #b8daff;
+                }
+        
+                /* Animation pour faire apparaître et disparaître les messages */
+                @keyframes fadeInOut {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    10% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    90% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                }
+                /* Media Queries pour les petits écrans */
+                @media (max-width: 600px) {
+                    body {
+                        padding: 10px; /* Réduire le padding pour les petits écrans */
+                    }
+        
+                    h1 {
+                        font-size: 20px; /* Réduire la taille du titre */
+                    }
+        
+                    input[type="text"],
+                    button {
+                        font-size: 14px; /* Réduire la taille du texte pour les champs et boutons */
+                        padding: 10px; /* Réduire le padding */
+                    }
+        
+                    .otp-container {
+                        padding: 20px; /* Réduire le padding du conteneur */
+                    }
+        
+                    p {
+                        font-size: 12px; /* Réduire la taille du texte pour le lien "Resend OTP" */
+                    }
+                }
+    </style>
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong> Coiffure Du Monde</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>Admin Dashboard</h1>
+                            
+                            <!-- Section to display flash messages -->
+                        <div class="flash-messages">
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="flash-{{ category }}">{{ message }}</div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        </header>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+       
+
+                    <header class="header">
+                        <h1>Statistics</h1>
+                    </header>
+                
+                    <main class="dashboard">
+                        <!-- Section des statistiques -->
+                        <section class="stats-section">
+                            
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <h3>Total Reservations</h3>
+                                    <p>{{ stats.total_reservations }}</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Total Users</h3>
+                                    <p>{{ stats.total_users }}</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Validated Reservations</h3>
+                                    <p>{{ stats.status_counts['Validated']|default(0) }}</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Canceled Reservations</h3>
+                                    <p>{{ stats.status_counts['Canceled']|default(0) }}</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Denied Reservations</h3>
+                                    <p>{{ stats.status_counts['Denied']|default(0) }}</p>
+                                </div>
+                            </div>
+                        </section>
+                
+                        
+                    </main>
+                
+   
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="/">Back to Site</a></li>
+                        <li><a href="{{url_for('admin_guide')}}">Admin guide</a></li>
+                        <li><a href="{{url_for('admin_dashboard')}}">Admin Dashboard</a></li>
+                        <li><a href="{{url_for('add_admin')}}">Add Admin</a></li>
+                        <li><a href="{{url_for('admin_list')}}">Manage Admins</a></li>
+                        <li><a href="{{url_for('user_list')}}">Users List</a></li>
+                        <li><a href="{{url_for('add_service')}}">Add Services</a></li>
+                        <li><a href="{{url_for('add_promotion')}}">Add Promotions</a></li>
+                        <li><a href="{{url_for('promotions_admin')}}">Manage Promotions or Offers</a></li>
+                        <li><a href="{{url_for('admin_reservation')}}">Manage Reservations</a></li>
+                        <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
+    
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>
+
+

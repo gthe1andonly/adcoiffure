@@ -1,0 +1,34 @@
+<!-- templates/category_gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{{ category }} - ADCoiffure</title>
+</head>
+<body>
+    <h1>{{ category }}</h1>
+
+    <div class="gallery">
+        {% if services %}
+            {% for service in services %}
+                <div class="service-card">
+                    {% if service.image %}
+                        <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                    <p><strong>Price:</strong> ${{ "%.2f"|format(service.price) }}</p>
+                    <p><strong>Duration:</strong> {{ service.duration }}</p>
+                    <a href="{{ url_for('book_appointment', service_id=service.id) }}" class="btn">Book Appointment Now</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No services available in this category.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

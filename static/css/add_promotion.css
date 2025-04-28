@@ -1,0 +1,89 @@
+/* Main content styling */
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Fond blanc pour un look propre */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-top: 20px;
+}
+
+/* Form styling */
+main form {
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+/* Labels styling */
+main form label {
+    display: block;
+    font-size: 14px;
+    margin-top: 15px; /* Espacement entre les champs */
+    color: #555; /* Gris pour un look doux */
+    font-weight: bold; /* Texte en gras pour les labels */
+}
+
+/* Input fields and textarea styling */
+main form input[type="text"],
+main form input[type="date"],
+main form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Bordure grise légère */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+main form input:focus,
+main form textarea:focus {
+    border-color: #2e7d32; /* Vert au focus */
+    outline: none;
+}
+
+/* Date picker styling */
+main form input[type="date"] {
+    appearance: none; /* Désactive les styles natifs du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    background-color: #fff; /* Fond blanc */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232e7d32' viewBox='0 0 16 16'%3E%3Cpath d='M14 3h-1V1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2H0v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3zm-3 0V1h1v2h-1zM4 1v2h1V1H4zm6 0v2h1V1h-1zM2 5h12V3H2v2zm0 12V5h12v12H2z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positionne l'icône à droite */
+    background-size: 20px; /* Taille de l'icône */
+    padding-right: 40px; /* Espace pour l'icône */
+}
+
+main form input[type="date"]:focus {
+    border-color: #2e7d32; /* Vert au focus */
+}
+
+/* File upload styling */
+main form input[type="file"] {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+main form button:hover {
+    background-color: #1b5e20; /* Vert plus foncé au survol */
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+
+/* Flash messages styling */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main ul li {
+    background-color: #f8d7da; /* Rouge clair pour les erreurs */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}

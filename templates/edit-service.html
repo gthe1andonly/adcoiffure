@@ -1,0 +1,127 @@
+<!-- This is the HTML template for editing services on the A&D World Hairdressing website. It allows admins to edit existing services easily. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_service.css') }}">
+</head>
+<body>
+    
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header containing salon name and socials -->
+                <header id="header">
+                    <a href="/" class="logo"><strong>A&D</strong>Coiffure Du Monde</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                        <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>Edit Service</h1>
+                            <p>Edit your service easily</p>
+                        </header>
+                    </div>
+                    <span class="image object">
+                        <img src="/static/images/logo.png" alt="" />
+                    </span>
+                </section>
+       
+            <main>
+                
+                <!-- Section to display flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul>
+                        {% for category, message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+                <form action="{{ url_for('edit_service', service_id=service.id) }}" method="POST" enctype="multipart/form-data">
+                    <label for="name">Service Name:</label>
+                    <input type="text" id="name" name="name" required value="{{ service.name }}">
+            
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" >{{ service.description }}</textarea>
+            
+                    <label for="price">Price ($):</label>
+                    <input type="number" id="price" name="price" required value="{{ service.price }}">
+            
+                    <label for="duration">Duration:</label>
+                    <input type="text" id="duration" name="duration" placeholder="e.g., 1 hour" required value="{{ service.duration }}">
+            
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="braids">Braids</option>
+                        <option value="treatment">Chemical and Natural Service</option>
+                        <option value="extensions">Extensions</option>
+                    </select>
+            
+                    <label for="image">Current Image:</label><br>
+                    {% if service.image %}
+                        <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}" width="100"><br><br>
+                    {% endif %}
+                    <label for="image">Change Image (optional):</label><br>
+                    <div class="file-upload-container">
+                        
+                        <!-- Bouton de téléchargement par défaut -->
+                        <input type="file" id="image" name="image" accept="image/*" class="styled-file-input">
+                    
+                        <!-- Zone d'affichage du nom du fichier -->
+                        
+                    </div>
+            
+                    <button type="submit">Save Changes</button>
+                </form>
+            </main>
+
+   
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="/">Back to Site</a></li>
+                        <li><a href="{{url_for('admin_guide')}}">Admin guide</a></li>
+                        <li><a href="{{url_for('admin_dashboard')}}">Admin Dashboard</a></li>
+                        <li><a href="{{url_for('add_admin')}}">Add Admin</a></li>
+                        <li><a href="{{url_for('admin_list')}}">Manage Admins</a></li>
+                        <li><a href="{{url_for('user_list')}}">Users List</a></li>
+                        <li><a href="{{url_for('add_service')}}">Add Services</a></li>
+                        <li><a href="{{url_for('add_promotion')}}">Add Promotions</a></li>
+                        <li><a href="{{url_for('promotions_admin')}}">Manage Promotions or Offers</a></li>
+                        <li><a href="{{url_for('admin_reservation')}}">Manage Reservations</a></li>
+                        <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/browser.min.js"></script>
+    <script src="/static/js/breakpoints.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

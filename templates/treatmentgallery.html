@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>treatment Gallery</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body class="is-preload">
+
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <!-- Header containing salon name and socials -->
+                    <header id="header">
+                        <a href="/" class="logo"><strong>A&D</strong> Coiffure du Monde</a>
+                        <ul class="icons">
+
+                            <li><a href="https://www.facebook.com/profile.php?id=61559927362692" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
+                            <li><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        </ul>
+                    </header>
+                        <!-- Section to display flash messages -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <ul>
+                                {% for category, message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% endwith %}
+                    <section>
+                        <header class="major">
+                            <h2>Services</h2>
+                        </header>
+                        <header class="major">
+                            <p>Chemical and Natural Service</p>
+                        </header>
+
+                        <div class="posts">
+                            {% for service in services %}
+                            <article>
+
+                                {% if service.image %}
+                                    <a class="image"><img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}"></a>
+                                {% else %}
+                                    <p>No image available</p>
+                                {% endif %}
+                                <h3>{{ service.name }}</h3>
+                                <p>{{service.description}}<br>Price: ${{ "%.2f"|format(service.price) }} / Duration: {{ service.duration }} minutes
+                                   </p>
+                                   <a href="{{ url_for('book_appointment', service_id=service.id) }}" class="btn">Book Appointment Now</a>
+                            </article>
+                            {% endfor %}
+
+                           
+                           
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div class="inner">
+    
+                        <nav id="menu">
+                            <header class="major">
+                                <h2>Menu</h2>
+                            </header>
+                            <ul>
+                                <li ><a href="/" >Home</a></li>
+                                <li><a href="/user_guide">Users Guide</a></li>
+                                <li><a href="/appointments">My Appoinments</a></li>
+                                <li>
+                                    <span class="opener">Services</span>
+                                    <ul>
+                                        <li><a href="/braidsgallery">Braids</a></li>
+                                        <li><a href="/treatmentgallery">Chemical and Natural Service</a></li>
+                                        <li><a href="/extensionsgallery">Extensions</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{url_for('promotions')}}">Promotions or Offers</a></li>
+                                <li><a href="/contactus">Contact Us:</a></li>
+                                <li class="uid"><a href="/about">About Us</a></li>
+                                
+                                
+                                {% if isAdmin %}
+            
+                                    <li><a href="{{ url_for('admin_dashboard') }}">Dashboards</a></li>
+                                    
+                                {% endif %}
+                                {% if isConnect %}
+                                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                                {% else %}
+                                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                                {% endif %}
+                                
+                            </ul>
+                        </nav>
+                </div>
+            </div>
+
+        </div>
+        
+        <footer id="footer" class="footer">
+            <section >
+                <header class="major majorr">
+                    <h2>Contact Us</h2>
+                </header>
+                <ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="mailto:braidedbyaimee@gmail.com">braidedbyaimee@gmail.com</a></li>
+                    <li class="icon solid fa-phone"><a href="">+1 (240) 421-6230</a></li>
+                    <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=61559927362692">A&D Coiffure du monde</a></li>
+                    <li class="icon brands fa-whatsapp"><a href="https://wa.me/(+1)2404216230">+1 (240) 421-6230</a></li>
+                    <li class="icon brands fa-instagram"><a href="https://www.instagram.com/touchedbyaimee?igsh=MWZmNDN6cHE1cWp4bg==">touched by aimee</a></li>
+                    <li class="icon solid fa-home">572 N Frederick Ave, Suite 106 Gaithersburg MD20877 Maryland, USA</li>
+                </ul>
+            </section>
+            <p>© 2024 A&D Coiffure. All rights reserved.</p>
+        </footer>
+
+
+        <script src="/static/js/main.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/browser.min.js"></script>
+        <script src="/static/js/breakpoints.min.js"></script>
+        <script src="/static/js/util.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+</html>

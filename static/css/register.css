@@ -1,0 +1,151 @@
+/* Reset styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the form */
+.register-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    font-size: 24px;
+    color: #2e7d32; /* Green */
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+    text-align: left; /* Align text to the left */
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2e7d32; /* Green */
+    outline: none;
+}
+
+button:hover {
+    background-color: #55d35d; /* Darker green */
+}
+
+/* Link to login */
+p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+a {
+    color: #3d8541; /* Green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages container */
+.flash-messages {
+    position: absolute;
+    top: 20px; /* Positionné en haut de la page */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1000; /* S'assurer que les messages sont au-dessus du contenu */
+}
+
+/* Styles for success and error messages */
+.flash-success {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724; /* Vert foncé */
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flash-error {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Style pour le conteneur du préfixe +1 et de l'image */
+.phone-prefix-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+/*style pour l'iamge du drapeau*/
+/* Style pour l'image du drapeau */
+.phone-prefix-container img {
+    margin-right: 8px; /* Espace entre l'image et le préfixe */
+    width: 20px; /* Largeur fixe pour l'image */
+    height: 20px; /* Hauteur fixe pour l'image */
+    border-radius: 4px; /* Coins arrondis pour un look moderne */
+}
+
+.phone-prefix-container span {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.phone-prefix-container img,
+.phone-prefix-container i {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.phone-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+}

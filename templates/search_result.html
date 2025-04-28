@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+
+    <style>
+        /* Styles pour la page de résultats */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #2e7d32;
+            /* Vert foncé */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .service-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        
+        .service-card .details {
+            flex-grow: 1;
+        }
+        
+        .service-card button {
+            padding: 5px 10px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .service-card button:hover {
+            background-color: #1b5e20;
+            /* Vert plus foncé */
+        }
+        
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: #777;
+        }
+        
+        a {
+            -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+            -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+            -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+            border-bottom: dotted 1px;
+            color: var(--couleur1);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            border-bottom-color: var(--couleur1);
+            color: var(--couleur1) !important;
+        }
+        
+        a:hover strong {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="{{ url_for('index') }}" class="btn">Return to Homepage</a>
+    <h1>Search Results for "{{ query }}"</h1>
+
+    {% if services %} {% for service in services %}
+    <div class="service-card">
+        <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}">
+        <div class="details">
+            <h3>{{ service.name }}</h3>
+            <p><strong>Category:</strong> {{ service.category }}</p>
+            <p><strong>Description:</strong> {{ service.description or 'No description available.' }}</p>
+            <p><strong>Price:</strong> ${{ service.price }}</p>
+            <p><strong>Duration:</strong> {{ service.duration }} minutes</p>
+            <a href="{{ url_for('book_appointment', service_id=service.id) }}">
+                <button>Book Appointment Now</button>
+            </a>
+        </div>
+    </div>
+    {% endfor %} {% else %}
+    <p class="no-results">No results found for "{{ query }}".</p>
+    {% endif %}
+</body>
+
+</html>

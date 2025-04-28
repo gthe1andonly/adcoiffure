@@ -1,0 +1,72 @@
+/* Table body styling */
+main table tbody {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333; /* Texte gris foncé */
+}
+
+/* Table rows styling */
+main table tbody tr {
+    transition: background-color 0.3s ease; /* Effet de survol fluide */
+}
+
+main table tbody tr:hover {
+    background-color: #f9f9f9; /* Fond gris clair au survol */
+}
+
+/* Table cells styling */
+main table tbody td {
+    padding: 12px 16px; /* Espacement confortable */
+    border-bottom: 1px solid #ddd; /* Bordure grise légère entre les lignes */
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+/* Actions column styling */
+main table tbody td:last-child {
+    white-space: nowrap; /* Évite le retour à la ligne pour les boutons */
+}
+
+/* Buttons styling */
+main table tbody .btn {
+  
+    margin-right: 5px; /* Espace entre les boutons */
+}
+
+/* Delete button (Red) */
+main table tbody .btn-danger {
+    background-color: #f1807e; /* Rouge vif */
+    color: #fff; /* Texte blanc */
+}
+
+main table tbody .btn-danger:hover {
+    background-color: #f18b8b; /* Rouge plus foncé au survol */
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+
+
+main table tbody .btn-primary:hover {
+    background-color: #a5fdab; /* Vert plus foncé au survol */
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+
+
+main table tbody a:hover {
+    color: #2e7d32; /* Vert plus foncé au survol */
+    text-decoration: underline;
+}
+
+/* Already Admin text styling */
+main table tbody span {
+    color: #555; /* Gris pour indiquer que l'utilisateur est déjà admin */
+    font-style: italic; /* Style italique pour un look doux */
+}
+
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+table{
+    width: 100%;
+    min-width: 600px;
+}
